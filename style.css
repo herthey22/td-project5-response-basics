@@ -1,0 +1,751 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: opx;
+}
+body{
+    font-family: Georgia;
+}
+
+
+/*on screen that are 414px wide or lesser*/
+@media screen and (max-width: 414px) {
+    .nav_bar{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        list-style: relative;
+        background-color: teal;
+        padding: 12px 60px;          
+}
+nav a{
+    
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.menu-wrap .toggler{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+.menu-wrap .hamburger{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+
+}
+/*hamburger middle line*/
+.menu-wrap .hamburger > div{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.4s ease;
+}
+/* hamburger top and buttom*/
+.menu-wrap .hamburger > div::before,.menu-wrap .hamburger > div::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+/*moves line down*/
+.menu-wrap .hamburger > div::after{
+    top: 10px;
+}
+/*toggler animation*/
+.menu-wrap .toggler:checked + .hamburger>div{
+    transform: rotate(135deg);
+}
+/*turn line into X*/
+.menu-wrap .toggler:checked + .hamburger>div::before,
+.menu-wrap .toggler:checked + .hamburger>div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+.menu-wrap .toggler:checked:hover + .hamburger>div{
+    transform: rotate(225deg);
+}
+/*show menu*/
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+/*rotate on over when checked*/
+.menu-wrap .toggler:checked ~ .menu> div{
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+.menu-wrap .toggler:checked ~ .menu> div > div{
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    justify-self: center;
+
+}
+.menu-wrap .menu>div{
+    background-color: rgb(8, 228, 228);
+    width: 200vw;
+    overflow: hidden;
+    display: flex;
+    flex: none;
+    border-radius: 3%;
+    transition: all 0.4s ease;
+}
+.menu-wrap .menu > div > div{
+    max-width: 90vw;
+    max-height: 100vw;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+.menu-wrap .menu > div > div > ul > li > a{
+    transition: color 0.4s ease;
+}
+    /*section 1*/
+.work_container{
+    display: flex;
+    flex-direction:  column;
+    padding-top: 70px;
+    padding-left: 20px;
+}
+.work_item1{
+    padding-right: 50px;
+    padding-left: 30px;
+ }
+.work_item1 h2{
+    color: teal;
+    font-size: 30px;
+    
+}
+.work_item1 p{
+    font-size: 15px;
+    line-height: 40px;
+}
+.work_item2 img{
+    padding-right: 60px;
+    padding-left: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+    
+    /*section 2*/
+.design_container{
+    padding-top: 20px ;
+    padding-bottom: 50px;
+    background-color: rgba(245, 245, 245, 0.815);
+}
+.design_item{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+
+    
+}  
+.design_item1 {
+    color: teal;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+.design_item2{
+    background-color: teal;
+    color: white;
+    font-size: 25px;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+
+.row1 .column{
+    float:left;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 60px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column img{
+    border-radius: 10%;
+}
+
+
+
+/* section 3*/
+.services_container{ 
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(8, 228, 228);
+    display: flex;
+    flex-direction: column;
+
+}
+.service1{
+    color: white;
+    font-size: 25px;
+}
+.service2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 21px;
+}
+.service2 .service21{
+    background-color: white;
+    color:  rgb(8, 228, 228);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 7px;
+}
+.service2 .service22{
+    background-color: teal;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 7px;
+}
+
+
+
+/*section 4*/
+.contact{
+    background-color: teal;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+.contact_me {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 7px;
+} 
+
+.contact_item1 p{
+    font-size: 15px;
+    text-align: center ;
+}
+.contact_item1 h2{
+    font-size: 15px;
+    text-align: center;
+}
+.contact_item2 p{
+    font-size: 10px;
+    text-align: center;
+}
+}
+
+
+
+/*on screen that are 768px wide or lesser*/
+@media screen and (min-width: 415px) and (max-width: 768px) {
+    .nav_bar{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        list-style: relative;
+        background-color: teal;
+        padding: 12px 60px;          
+}
+nav a{
+    
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.menu-wrap .toggler{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+.menu-wrap .hamburger{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+
+}
+/*hamburger middle line*/
+.menu-wrap .hamburger > div{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.4s ease;
+}
+/* hamburger top and buttom*/
+.menu-wrap .hamburger > div::before,.menu-wrap .hamburger > div::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+/*moves line down*/
+.menu-wrap .hamburger > div::after{
+    top: 10px;
+}
+/*toggler animation*/
+.menu-wrap .toggler:checked + .hamburger>div{
+    transform: rotate(135deg);
+}
+/*turn line into X*/
+.menu-wrap .toggler:checked + .hamburger>div::before,
+.menu-wrap .toggler:checked + .hamburger>div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+.menu-wrap .toggler:checked:hover + .hamburger>div{
+    transform: rotate(225deg);
+}
+/*show menu*/
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+/*rotate on over when checked*/
+.menu-wrap .toggler:checked ~ .menu> div{
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+.menu-wrap .toggler:checked ~ .menu> div > div{
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    justify-self: center;
+
+}
+.menu-wrap .menu>div{
+    background-color: rgb(8, 228, 228);
+    width: 200vw;
+    overflow: hidden;
+    display: flex;
+    flex: none;
+    border-radius: 3%;
+    transition: all 0.4s ease;
+}
+.menu-wrap .menu > div > div{
+    max-width: 90vw;
+    max-height: 100vw;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+.menu-wrap .menu > div > div > ul > li > a{
+    transition: color 0.4s ease;
+}
+
+ 
+ /*section 1*/
+ .work_container{
+    text-align: center;
+    display: flex;
+    flex-direction:  column;
+    padding-top: 70px;
+    padding-left: 20px;
+ }
+ 
+.work_item1 h2{
+    color: teal;
+    font-size: 30px;
+    
+}
+.work_item1 p{
+    line-height: 20px;
+    padding-bottom: 30px;
+}
+.work_item2 img{
+    padding-right: 60px;
+    padding-left: 30px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+ /*section 2*/
+ .design_container{
+    padding-top: 30px ;
+    padding-bottom: 60px;
+    background-color: rgba(245, 245, 245, 0.815);
+}
+.design_item{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}  
+.design_item1 {
+    padding-left: 30px;
+    color: teal;
+    font-weight: 30px;
+
+
+}
+.design_item2{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: teal;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;*
+}
+
+.row1 .column{
+    float:left;
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column img{
+    width: 170px;
+    height: 170px;
+    border-radius: 10%;
+}
+
+
+/* section 3*/
+.services_container{ 
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(8, 228, 228);
+    display: flex;
+    flex-direction: column;
+
+}
+.service1{
+    color: white;
+    font-size: 30px;
+}
+.service2{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+.service2 .service21{
+    background-color: white;
+    color:  rgb(8, 228, 228);;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 7px;
+}
+.service2 .service22{
+    background-color: teal;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 7px;
+}
+
+
+
+/*section 4*/
+.contact{
+    background-color: teal;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+.contact_me {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 7px;
+} 
+
+.contact_item1 p{
+    font-size: 15px;
+    text-align: center ;
+}
+.contact_item1 h2{
+    font-size: 15px;
+    text-align: center;
+}
+.contact_item2 p{
+    font-size: 10px;
+    text-align: center;
+}
+}
+
+
+
+/*on screen that are 1024px wide or lesser*/
+@media screen and (min-width: 769px) {
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    list-style: relative;
+    background-color: teal;
+    padding: 12px 60px;          
+}
+nav a{
+    
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.menu-wrap .toggler{
+    display: none;
+}
+.menu-wrap .menu > div > div > ul > li{
+    list-style: none;
+}
+
+
+/*section 1*/
+.work_container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-bottom: 2% ;
+    padding-left: 70px;
+    font-size: 20px;
+}
+.work_item1 h2{
+    color: teal;
+    line-height: 40px;
+}
+.work_item2 img{
+    width: 75%;
+    height: 85%;
+}
+
+
+
+/*section 2*/
+.design_container{
+    padding-top: 50px ;
+    background-color: rgba(245, 245, 245, 0.815);
+}
+.design_item{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 70px;
+    width: 80%;
+}  
+.design_item1 {
+    font-size: 20px;
+    color: teal;
+}
+.design_item2{
+    background-color: teal;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    border-radius: 3px;
+}
+
+.row1 .column{
+    padding-left: 60px;
+    display: flex;
+    justify-content:space-between;
+    float:left;
+    width: 30%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    
+}
+
+/* section 3*/
+.services_container{ 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(8, 228, 228);
+    display: flex;
+
+
+}
+.service1{
+    font-size: 20px;
+    padding-left: 60px;
+    color: white;
+    width: 65%;
+}
+.service2{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 40px;
+
+}
+.service2 .service21{
+    background-color:white;
+    color: rgb(8, 228, 228) ;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+.service2 .service22{
+    background-color: teal;
+    text-align: center;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+
+
+
+/*section 4*/
+.contact{
+    background-color: teal;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+.contact_me {
+    text-align: center;
+    height: 10px;
+    border-radius: 2px;
+} 
+
+.contact_item1 p{
+    font-size: 15px;
+    text-align: center ;
+}
+.contact_item1 h2{
+    font-size: 15px;
+    text-align: center;
+}
+.contact_item2 p{
+    font-size: 10px;
+    text-align: center;
+}
+
+}
